@@ -1,0 +1,58 @@
+<template>
+	<div class="container">
+		<button @click="waterfallTap">跳转</button>
+		<text style="margin-top: 30rpx; color: black; font-size: 100rpx; background-color: bisque;" @click="tapUIss">点我</text>
+
+		<lmkmapview style="width: 750rpx; height: 500rpx;" @mapLoaded="onMapLoaded"></lmkmapview>
+		<text>latitude: {{ latitude }}</text>
+		<text>longitude: {{ longitude }}</text>
+	</div>
+</template>
+
+<script>
+export default {
+	name: 'componetview',
+	data() {
+		return {
+			longitude: '',
+			latitude: ''
+		};
+	},
+
+	created() {},
+
+	methods: {
+		waterfallTap() {
+			uni.navigateTo({
+				url: '/pages/index/temp'
+			});
+		},
+		onMapLoaded(e) {
+			this.latitude = e.detail.latitude;
+			this.longitude = e.detail.longitude;
+		},
+		tapUI() {
+			this.$refs.mycomponent.focus({
+				title: '哈哈哈',
+				img: '../static/logo.png',
+				url: 'https://baidu.com'
+			});
+		},
+		tapUIss() {
+			uni.showToast({
+				icon: 'none'
+			});
+		}
+	}
+};
+</script>
+
+<style>
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 750rpx;
+	height: 2087rpx;
+	background-color: yellowgreen;
+}
+</style>

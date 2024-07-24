@@ -1,0 +1,29 @@
+{
+	"name": "lmk-testplugin",
+	"id": "lmk-testplugin",
+	"version": "1.0.0",
+	"description": "原生分享插件学习",
+	"_dp_type": "nativeplugin",
+	"_dp_nativeplugin": {
+		"ios": {
+			"plugins": [{
+				"type": "module",
+				"name": "lmk-testplugin",
+				"class": "LMKTestPluginM"
+			}, {
+				"type": "component",
+				"name": "iosactivity",
+				"class": "LMKIOSActivityComponent"
+			}, {
+				"type": "component",
+				"name": "lmkmapview",
+				"class": "LMKMapView"
+			}],
+			"integrateType": "framework",
+			"deploymentTarget": "12.0",
+			"validArchitectures": [
+				"arm64", "arm64e"
+			]
+		}
+	}
+}

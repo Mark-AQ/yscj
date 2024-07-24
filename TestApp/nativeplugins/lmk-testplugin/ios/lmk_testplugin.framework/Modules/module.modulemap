@@ -1,0 +1,6 @@
+framework module lmk_testplugin {
+  umbrella header "lmk-testplugin-umbrella.h"
+
+  export *
+  module * { export * }
+}
